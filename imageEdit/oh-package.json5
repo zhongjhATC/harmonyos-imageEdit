@@ -8,6 +8,8 @@
   "author": "zhongjh",
   "license": "Apache-2.0",
   "dependencies": {},
+  "homepage": "https://github.com/zhongjhATC/harmonyos-imageEdit",
+  "repository": "https://github.com/zhongjhATC/harmonyos-imageEdit",
   // 关键字信息数组，便于搜索使用
   "keywords": [
     "OpenHarmony",
