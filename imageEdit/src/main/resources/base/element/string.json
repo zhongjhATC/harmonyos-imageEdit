@@ -1,0 +1,88 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "图片编辑"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "图片编辑"
+    },
+    {
+      "name": "reason",
+      "value": "save image"
+    },
+    {
+      "name": "image_edit",
+      "value": "imageEdit"
+    },
+    {
+      "name": "doodle",
+      "value": "doodle"
+    },
+    {
+      "name": "crop",
+      "value": "crop"
+    },
+    {
+      "name": "mosaic",
+      "value": "mosaic"
+    },
+    {
+      "name": "rotate",
+      "value": "rotate"
+    },
+    {
+      "name": "adjust",
+      "value": "adjust"
+    },
+    {
+      "name": "brightness",
+      "value": "brightness"
+    },
+    {
+      "name": "transparency",
+      "value": "transparency"
+    },
+    {
+      "name": "saturation",
+      "value": "saturation"
+    },
+    {
+      "name": "save_image",
+      "value": "saveImage"
+    },
+    {
+      "name": "confirm_save",
+      "value": "are you sure to save image"
+    },
+    {
+      "name": "save",
+      "value": "save"
+    },
+    {
+      "name": "cancel",
+      "value": "cancel"
+    },
+    {
+      "name": "exec_edit",
+      "value": "running exec edit."
+    },
+    {
+      "name": "eraser_full_size",
+      "value": "100%"
+    },
+    {
+      "name": "eraser_pen_shape_text",
+      "value": "涂鸦"
+    },
+    {
+      "name": "eraser_eraser_text",
+      "value": "橡皮擦"
+    }
+  ]
+}

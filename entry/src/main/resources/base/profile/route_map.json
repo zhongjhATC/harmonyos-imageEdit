@@ -1,0 +1,12 @@
+{
+  "routerMap": [
+    {
+      "name": "ImageEditPage",
+      "pageSourceFile": "src/main/ets/pages/ImageEditPage.ets",
+      "buildFunction": "RegisterBuilder",
+      "data": {
+        "description": "this is IndexPage"
+      }
+    }
+  ]
+}

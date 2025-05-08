@@ -1,0 +1,21 @@
+{
+  "name": "@zhongjh/image_edit",
+  "compatibleSdkVersion": "5.0.0(12)",
+  "version": "1.0.0",
+  "description": "imageEdit是一个功能丰富的兼容API12的图片编辑库,旨在帮助开发者快速、便捷地完成编辑图片任务。该库涵盖了裁剪、涂鸦、马赛克、撤销、重做等一系列操作。",
+  "main": "Index.ets",
+  "runtimeOS": "HarmonyOS",
+  "author": "zhongjh",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  // 关键字信息数组，便于搜索使用
+  "keywords": [
+    "OpenHarmony",
+    "imageEdit",
+    "image",
+    "HarmonyOS",
+    "crop",
+    "doodle",
+    "mosaic"
+  ]
+}

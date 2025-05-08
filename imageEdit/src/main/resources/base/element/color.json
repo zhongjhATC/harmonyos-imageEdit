@@ -1,0 +1,24 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "eraser_top_and_bottom_line_background_color",
+      "value": "#cc212224"
+    },
+    {
+      "name": "eraser_divider_color",
+      "value": "#cccccc"
+    },
+    {
+      "name": "eraser_unselected_color",
+      "value": "#CCFFFFFF"
+    },
+    {
+      "name": "eraser_top_button_disabled_color",
+      "value": "#55FFFFFF"
+    }
+  ]
+}

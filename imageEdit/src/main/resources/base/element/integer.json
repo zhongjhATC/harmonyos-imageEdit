@@ -1,0 +1,32 @@
+{
+  "integer": [
+    {
+      "name": "eraser_top_button_size",
+      "value": 24
+    },
+    {
+      "name": "eraser_top_button_line_height",
+      "value": 60
+    },
+    {
+      "name": "eraser_pen_shape_icon_size",
+      "value": 36
+    },
+    {
+      "name": "eraser_pen_shape_text_margin_top",
+      "value": 3
+    },
+    {
+      "name": "eraser_divider_margin",
+      "value": 20
+    },
+    {
+      "name": "eraser_bottom_line_height",
+      "value": 80
+    },
+    {
+      "name": "eraser_bottom_pen_shape_margin_right",
+      "value": 20
+    }
+  ]
+}

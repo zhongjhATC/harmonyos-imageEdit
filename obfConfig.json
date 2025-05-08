@@ -1,0 +1,41 @@
+{
+  "mEnable" : true,
+  "mNameObfuscation" : {
+    "mEnable" : true
+  },
+  "mStringArray" : true,
+  "mReservedStrings" : [ ],
+  "mReservedFiles" : [ "oh_moudles.*" ],
+  "mControlFlow" : true,
+  "obfVersion" : "ver2.3.0_HMNR_rel_250331.2",
+  "mNumberExpression" : true,
+  "mLogicalExpression" : true,
+  "mBogusControlFlow" : 0.0,
+  "bitcodeObf" : {
+    "enable" : true,
+    "strength" : 1,
+    "splitBB" : 3,
+    "bcf" : 0,
+    "fla" : 30,
+    "z_opaque" : 0,
+    "stringCry" : 0,
+    "sub" : 0,
+    "mReservedFiles" : [ ]
+  },
+  "soObf" : {
+    "enable" : true,
+    "whiteFileList" : [ ],
+    "blackFileList" : [ ]
+  },
+  "mSecSdk" : {
+    "mEnable" : true,
+    "mAntiOpenHarmony" : false,
+    "mAntiSimulator" : false,
+    "mAntiDebug" : false,
+    "mAntiScreenShare" : false,
+    "mCheckRoot" : false,
+    "mAntiCapturePackage" : false,
+    "mCheckVPN" : false,
+    "mCheckLog" : false
+  }
+}

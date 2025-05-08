@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "imageEdit",
+    "type": "har",
+    "deviceTypes": [
+      "phone",
+      "tablet"
+    ]
+  }
+}
