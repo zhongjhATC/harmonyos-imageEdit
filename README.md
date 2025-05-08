@@ -119,4 +119,4 @@ struct ImageEditPage {
 
 ## star`imageEdit`希望您可以动一动小手点点小⭐⭐
 
-## 👴希望大家如有好的需求踊跃提交,如有问题请前往gitee提交issue，我闲暇时间会扩充与修复优化
+## 👴希望大家如有好的需求踊跃提交,如有问题请前往github提交issue，我闲暇时间会扩充与修复优化
