@@ -52,7 +52,7 @@ struct Index {
   async getResourceFd() {
     const resourceMgr = getContext(this).resourceManager;
     const context = getContext(this);
-    let imageBuffer = await resourceMgr.getMediaContent($r('app.media.image'))
+    let imageBuffer = await resourceMgr.getMediaContent($r('app.media.mosaic'))
     let filePath = context.cacheDir + '/image.jpg';
     let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     fs.writeSync(file.fd, imageBuffer.buffer);
