@@ -1,7 +1,7 @@
 {
   "name": "@zhongjh/image_edit",
   "compatibleSdkVersion": "5.0.0(12)",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "imageEdit是一个功能丰富的兼容API12的图片编辑库,旨在帮助开发者快速、便捷地完成编辑图片任务。该库涵盖了裁剪、涂鸦、马赛克、撤销、重做等一系列操作。",
   "main": "index.ets",
   "runtimeOS": "HarmonyOS",
