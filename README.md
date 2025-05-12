@@ -11,6 +11,14 @@
 
 -------------------------------------------------------------------------------
 
+## 快照(涂鸦、马赛克、裁剪、撤销重做、缩放等功能)
+![默认.png](https://file.pop.atomgit.com/atomgit/information/2025/05/12/ded7734c2a8349b8a8cbbb6910001c5e.png)
+![涂鸦.png](https://file.pop.atomgit.com/atomgit/information/2025/05/12/20c7191c28c14514857dd5af6437aff1.png)
+![马赛克.png](https://file.pop.atomgit.com/atomgit/information/2025/05/12/8ec90c9f03d64d05922cbfdd050a7080.png)
+![裁剪.png](https://file.pop.atomgit.com/atomgit/information/2025/05/12/80f892c8eced48adac00b60c13d00cb8.png)
+![撤销重做.png](https://file.pop.atomgit.com/atomgit/information/2025/05/12/c7de33e221c4419a998e92d2be0a9009.png)
+![缩放.png](https://file.pop.atomgit.com/atomgit/information/2025/05/12/13ffb714a04a4f05825ef07fe4959321.png)
+
 ## 🛠️版本说明
 
 > - <span style='color:red;'>1.0.x版本系列兼容**API12**</span>
