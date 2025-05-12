@@ -33,7 +33,7 @@ struct ImageEditPage {
             },
             apiModel: {
               cropMoveType: CropMoveType.All,
-              isScale: false
+              isScale: true
             }
           })
         }
