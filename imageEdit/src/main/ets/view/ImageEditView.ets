@@ -31,7 +31,7 @@ import { ScreenManager } from '../api/ScreenManager';
  * 主要提供相关功能UI
  */
 @Component
-export struct ImageEdit {
+export struct ImageEditView {
   /**
    * 功能模块索引
    */

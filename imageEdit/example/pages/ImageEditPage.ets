@@ -1,5 +1,7 @@
 import { image } from "@kit.ImageKit";
-import { ImageEdit, CropMoveType } from "@zhongjh/image_edit";
+import { CropMoveType } from "../../src/main/ets/common/ImageEditType";
+import { ImageEditView } from "../../src/main/ets/view/ImageEditView";
+
 
 @Builder
 export function RegisterBuilder() {
@@ -26,7 +28,7 @@ struct ImageEditPage {
     NavDestination() {
       Row() {
         if (this.pixelMap) {
-          ImageEdit({
+          ImageEditView({
             pixelMap: this.pixelMap,
             onCancel: () => {
               this.navPathStack?.pop();
