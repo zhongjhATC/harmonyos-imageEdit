@@ -174,7 +174,7 @@ export struct ImageSelect {
           if (this.imageEdit !== undefined) {
             this.imageEdit.setCanvasReady(true);
             let offscreenCanvas: OffscreenCanvas =
-              new OffscreenCanvas(Math.ceil(this.context.width), Math.ceil(this.context.height));
+              new OffscreenCanvas(Math.ceil(this.context.width), Math.ceil(this.context.height) + 1);
             let offContext = offscreenCanvas.getContext('2d', this.settings);
 
             this.imageEdit.setCanvasContext(this.context, this.contextDoodle, offContext);

@@ -1,8 +1,8 @@
 import { AbilityConstant, bundleManager, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
-import { ImageEditManager } from '@zhongjh/image_edit';
 import StatusUtils from './utils/StatusUtils';
+import { ImageEditManager } from '../src/main/ets/api/ImageEditManager';
 
 /**
  * 例子的入口
