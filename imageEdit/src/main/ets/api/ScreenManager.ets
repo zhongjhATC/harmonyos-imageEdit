@@ -89,8 +89,8 @@ export class ScreenManager {
    * 初始化 winWidth,winHeight
    * @param win window
    */
-  initializationSize(win: window.Window) {
-    let properties = win.getWindowProperties();
+  initializationSize() {
+    let properties = ImageEditManager.getInstance().windowClass.getWindowProperties();
     if (!properties || !properties.windowRect) {
       return;
     }
@@ -127,10 +127,10 @@ export class ScreenManager {
   /**
    * 初始化模式
    */
-  initWindowMode(windowStatusType: WindowStatusType): void {
+  initWindowMode(): void {
     Log.debug(TAG, `start to initialize photos application window mode: ${this.windowMode}`);
-    this.checkWindowMode(windowStatusType);
-    this.setMainWindow(windowStatusType);
+    this.checkWindowMode();
+    this.setMainWindow();
   }
 
   /**
@@ -144,9 +144,9 @@ export class ScreenManager {
   /**
    * 检查屏幕模式
    */
-  async checkWindowMode(windowStatusType: WindowStatusType): Promise<void> {
+  async checkWindowMode(): Promise<void> {
     let before = this.windowMode;
-    let mode = windowStatusType;
+    let mode = ImageEditManager.getInstance().windowStatusType;
     Log.info(TAG, `photos application before/current window mode: ${before}/${mode}`);
 
     if (before.toString() == mode.toString()) {
@@ -165,15 +165,15 @@ export class ScreenManager {
   /**
    * 设置主窗口
    */
-  setMainWindow(windowStatusType: WindowStatusType): void {
+  setMainWindow(): void {
     Log.debug(TAG, 'setMainWindow');
     ImageEditManager.getInstance().windowClass?.on('windowSizeChange', (data) => {
       Log.debug(TAG, `windowSizeChange ${JSON.stringify(data)}`);
-      this.onWinSizeChanged(windowStatusType, data);
+      this.onWinSizeChanged(data);
     })
     let properties = ImageEditManager.getInstance().windowClass?.getWindowProperties();
     Log.info(TAG, `Window prop: ${JSON.stringify(properties)}`);
-    this.onWinSizeChanged(windowStatusType, properties.windowRect);
+    this.onWinSizeChanged(properties.windowRect);
   }
 
   /**
@@ -226,13 +226,13 @@ export class ScreenManager {
   /**
    * 侦听窗口大小更改
    */
-  private onWinSizeChanged(windowStatusType: WindowStatusType, size: window.Size): void {
+  private onWinSizeChanged(size: window.Size): void {
     Log.info(TAG, `onWinSizeChanged ${JSON.stringify(size)}`);
     if (size == null || size == undefined) {
       return;
     }
     let isSplitModeBefore = this.isSplitMode();
-    this.checkWindowMode(windowStatusType);
+    this.checkWindowMode();
     this.winWidth = px2vp(size.width);
     this.winHeight = px2vp(size.height);
     Log.info(TAG, `onWinSizeChanged px2vp: ${this.winWidth} ${this.winHeight}`);

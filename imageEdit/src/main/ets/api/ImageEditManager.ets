@@ -21,6 +21,7 @@ import { ScreenManager } from './ScreenManager';
  */
 export class ImageEditManager {
   windowClass: window.Window = null!
+  windowStatusType: WindowStatusType = null!
   /**
    * 获取状态栏高度
    */
@@ -39,11 +40,11 @@ export class ImageEditManager {
   }
 
   init(windowClass: window.Window, windowStatusType: WindowStatusType, statusBarHeight: number, naviBarHeight: number) {
+    // 缓存windowClass
     this.windowClass = windowClass;
+    this.windowStatusType = windowStatusType;
     this.statusBarHeight = statusBarHeight
     this.naviBarHeight = naviBarHeight
-    // 缓存windowClass
-    ScreenManager.getInstance().initializationSize(windowClass);
-    ScreenManager.getInstance().initWindowMode(windowStatusType);
+    ScreenManager.getInstance().initializationSize();
   }
 }

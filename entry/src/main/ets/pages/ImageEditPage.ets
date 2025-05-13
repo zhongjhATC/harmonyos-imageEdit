@@ -1,5 +1,6 @@
 import { image } from "@kit.ImageKit";
 import { ImageEdit, CropMoveType } from "@zhongjh/image_edit";
+import { window } from "@kit.ArkUI";
 
 @Builder
 export function RegisterBuilder() {
@@ -42,6 +43,10 @@ struct ImageEditPage {
     .onReady((context: NavDestinationContext) => {
       this.navPathStack = context.pathStack;
       this.pixelMap = this.navPathStack.getParamByName('ImageEditPage')[0] as image.PixelMap;
+    })
+    .onBackPressed(() => {
+      this.navPathStack?.pop({ isCancel: true }, true);
+      return true;
     })
     .hideTitleBar(true)
   }

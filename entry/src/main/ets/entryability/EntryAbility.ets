@@ -1,8 +1,8 @@
 import { AbilityConstant, bundleManager, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
-import StatusUtils from '@zhongjh/image_edit/example/utils/StatusUtils';
 import { ImageEditManager } from '@zhongjh/image_edit';
+import StatusUtils from '../utils/StatusUtils';
 
 /**
  * 例子的入口
@@ -14,6 +14,7 @@ export default class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     let windowClass: window.Window = windowStage.getMainWindowSync();
+    // 需要获取状态栏高度提供给ImageEditManager
     StatusUtils.getInstance().initStatusBarAndNavigationBar(windowClass);
     // 监控窗口变化,用来初始化ImageEditManager
     windowClass.on('windowStatusChange', (status) => {

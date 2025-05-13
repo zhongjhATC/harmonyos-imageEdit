@@ -19,11 +19,12 @@ import { CommonConstants } from '../common/CommonConstants';
 import { ImageSelect } from './ImageSelectView';
 import { ImageSizeItem } from '../entity/ImageSizeItem';
 import { ImageEditManager } from '../api/ImageEditManager';
-import { promptAction } from '@kit.ArkUI';
+import { promptAction, window } from '@kit.ArkUI';
 import { ConstantsID } from '../common/ConstantsID';
 import { MainTabId } from '../common/ImageEditType';
 import { ApiModel } from '../entity/ApiModel';
 import Logger from '../utils/LoggerUtil';
+import { ScreenManager } from '../api/ScreenManager';
 
 /**
  * 编辑页面组件,方便随便扩展page
@@ -113,6 +114,8 @@ export struct ImageEdit {
   onCancel?: () => void;
 
   async aboutToAppear() {
+    // 初始化模式,例如全屏、隐藏状态栏等等
+    ScreenManager.getInstance().initWindowMode();
     this.avoidHeight = ImageEditManager.getInstance().statusBarHeight + ImageEditManager.getInstance().naviBarHeight;
     await this.pixelInit();
   }

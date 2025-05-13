@@ -1,5 +1,9 @@
-import { image } from '@kit.ImageKit';
 import fs from '@ohos.file.fs';
+import { window } from '@kit.ArkUI';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import StatusUtils from '../utils/StatusUtils';
+import { image } from '@kit.ImageKit';
 
 /**
  * 入口page,用来打开编辑图片界面
@@ -9,12 +13,12 @@ import fs from '@ohos.file.fs';
 struct Index {
   navPathStack: NavPathStack = new NavPathStack();
   @State message: string = 'Hello World';
-  @State newPath: string = '';
+  @State newPixelMap?: PixelMap = undefined;
 
   build() {
     Navigation(this.navPathStack) {
       RelativeContainer() {
-        Image(this.newPath)
+        Image(this.newPixelMap)
           .objectFit(ImageFit.Contain)
         Text(this.message)
           .id('HelloWorld')
@@ -32,9 +36,15 @@ struct Index {
                 editable: true
               });
               // 准备就绪，替换Main
-              this.navPathStack.pushPathByName('ImageEditPage', pixelMap, (popInfo: PopInfo) => {
-                let pageResult = popInfo.result as string
-                this.newPath = pageResult;
+              this.navPathStack.pushPathByName('ImageEditPage', pixelMap, async (popInfo: PopInfo) => {
+                if (!(popInfo.result instanceof Boolean)) {
+                  let pageResult = popInfo.result as image.PixelMap
+                  this.newPixelMap = pageResult;
+                }
+                window.getLastWindow(getContext() as common.UIAbilityContext, (_err: BusinessError, data) => {
+                  // 恢复状态栏
+                  StatusUtils.getInstance().initStatusBarAndNavigationBar(data);
+                });
               });
             } catch (e) {
               let a = 5;
