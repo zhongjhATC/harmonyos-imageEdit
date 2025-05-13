@@ -19,6 +19,9 @@
 ![撤销重做.png](https://file.pop.atomgit.com/atomgit/information/2025/05/12/c7de33e221c4419a998e92d2be0a9009.png)
 ![缩放.png](https://file.pop.atomgit.com/atomgit/information/2025/05/12/13ffb714a04a4f05825ef07fe4959321.png)
 
+## 开源库地址
+https://github.com/zhongjhATC/harmonyos-imageEdit
+
 ## 🛠️版本说明
 
 > - <span style='color:red;'>1.0.x版本系列兼容**API12**</span>
