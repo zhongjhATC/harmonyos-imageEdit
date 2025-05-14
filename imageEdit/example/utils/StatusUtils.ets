@@ -40,7 +40,7 @@ export default class StatusUtils {
       // 导航栏颜色
       navigationBarColor: '#00000000',
       // 状态栏文字颜色
-      statusBarContentColor: '#FFFFFF',
+      statusBarContentColor: '#000000',
       // 导航栏文字颜色
       // navigationBarContentColor: '#ffffffff'
     }
@@ -48,9 +48,7 @@ export default class StatusUtils {
     // 启动状态栏,意思是隐藏任务栏
     windowClass.setWindowSystemBarEnable(['status']);
     // 设置颜色
-    windowClass.setWindowSystemBarProperties(SystemBarProperties, (_err) => {
-
-    })
+    windowClass.setWindowSystemBarProperties(SystemBarProperties)
 
     // 获取高度,用于后续padding这些高度
     let avoidArea: window.AvoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);

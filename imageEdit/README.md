@@ -72,14 +72,16 @@ export default class EntryAbility extends UIAbility {
 
 ```
 import { image } from "@kit.ImageKit";
-import { ImageEdit, CropMoveType } from "@zhongjh/image_edit";
-import RouterConstant from "../../common/constant/RouterConstant";
+import { ImageEditView, CropMoveType } from "@zhongjh/image_edit";
 
 @Builder
 export function RegisterBuilder() {
   ImageEditPage()
 }
 
+/**
+ * 编辑图片界面,具体如何使用根据自身场景调用
+ */
 @Entry
 @Component
 struct ImageEditPage {
@@ -97,14 +99,14 @@ struct ImageEditPage {
     NavDestination() {
       Row() {
         if (this.pixelMap) {
-          ImageEdit({
+          ImageEditView({
             pixelMap: this.pixelMap,
             onCancel: () => {
-              this.navPathStack?.pop();
+              this.navPathStack?.pop({ isCancel: true }, true);
             },
             apiModel: {
-              cropMoveType: CropMoveType.Vertical,
-              isScale: false
+              cropMoveType: CropMoveType.All,
+              isScale: true
             }
           })
         }
@@ -112,7 +114,11 @@ struct ImageEditPage {
     }
     .onReady((context: NavDestinationContext) => {
       this.navPathStack = context.pathStack;
-      this.pixelMap = this.navPathStack.getParamByName(RouterConstant.ImageEditPage)[0] as image.PixelMap;
+      this.pixelMap = this.navPathStack.getParamByName('ImageEditPage')[0] as image.PixelMap;
+    })
+    .onBackPressed(() => {
+      this.navPathStack?.pop({ isCancel: true }, true);
+      return true;
     })
     .hideTitleBar(true)
   }

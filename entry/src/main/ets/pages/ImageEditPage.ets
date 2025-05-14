@@ -1,6 +1,5 @@
 import { image } from "@kit.ImageKit";
-import { ImageEdit, CropMoveType } from "@zhongjh/image_edit";
-import { window } from "@kit.ArkUI";
+import { ImageEditView, CropMoveType } from "@zhongjh/image_edit";
 
 @Builder
 export function RegisterBuilder() {
@@ -27,10 +26,10 @@ struct ImageEditPage {
     NavDestination() {
       Row() {
         if (this.pixelMap) {
-          ImageEdit({
+          ImageEditView({
             pixelMap: this.pixelMap,
             onCancel: () => {
-              this.navPathStack?.pop();
+              this.navPathStack?.pop({ isCancel: true }, true);
             },
             apiModel: {
               cropMoveType: CropMoveType.All,

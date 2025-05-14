@@ -37,7 +37,7 @@ struct Index {
               });
               // 准备就绪，替换Main
               this.navPathStack.pushPathByName('ImageEditPage', pixelMap, async (popInfo: PopInfo) => {
-                if (!(popInfo.result instanceof Boolean)) {
+                if (!popInfo.result['isCancel']) {
                   let pageResult = popInfo.result as image.PixelMap
                   this.newPixelMap = pageResult;
                 }

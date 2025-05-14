@@ -1,7 +1,7 @@
 import { image } from "@kit.ImageKit";
-import { CropMoveType } from "../../src/main/ets/common/ImageEditType";
+import { window } from "@kit.ArkUI";
 import { ImageEditView } from "../../src/main/ets/view/ImageEditView";
-
+import { CropMoveType } from "../../src/main/ets/common/ImageEditType";
 
 @Builder
 export function RegisterBuilder() {
@@ -31,11 +31,11 @@ struct ImageEditPage {
           ImageEditView({
             pixelMap: this.pixelMap,
             onCancel: () => {
-              this.navPathStack?.pop();
+              this.navPathStack?.pop({ isCancel: true }, true);
             },
             apiModel: {
               cropMoveType: CropMoveType.All,
-              isScale: false
+              isScale: true
             }
           })
         }
@@ -44,6 +44,10 @@ struct ImageEditPage {
     .onReady((context: NavDestinationContext) => {
       this.navPathStack = context.pathStack;
       this.pixelMap = this.navPathStack.getParamByName('ImageEditPage')[0] as image.PixelMap;
+    })
+    .onBackPressed(() => {
+      this.navPathStack?.pop({ isCancel: true }, true);
+      return true;
     })
     .hideTitleBar(true)
   }

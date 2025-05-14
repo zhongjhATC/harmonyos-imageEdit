@@ -4,15 +4,17 @@ import { window } from '@kit.ArkUI';
 import StatusUtils from '../utils/StatusUtils';
 import { ImageEditManager } from '../../src/main/ets/api/ImageEditManager';
 
+/**
+ * 例子的入口
+ */
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // 获取应用主窗口
     let windowClass: window.Window = windowStage.getMainWindowSync();
-    // 1. 设置全屏,沉侵式状态栏
+    // 需要获取状态栏高度提供给ImageEditManager
     StatusUtils.getInstance().initStatusBarAndNavigationBar(windowClass);
     // 监控窗口变化,用来初始化ImageEditManager
     windowClass.on('windowStatusChange', (status) => {
